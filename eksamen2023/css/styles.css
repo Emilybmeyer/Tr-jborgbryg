@@ -1,0 +1,463 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    min-height: fit-content; /*Så min sider fylder det mit content fylder*/
+    background-color: #FFF9E4;
+    
+}
+
+main{
+    min-height: fit-content; /*Så min sider fylder det mit content fylder*/
+    background-color: #FFF9E4;
+    z-index: 2;
+    top: 0;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background-color: #FFF9E4;
+    z-index: -1;
+}
+
+/* Styling af logo */
+.logo-container{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: #FFF9E4;
+    width: 100%;
+    
+    
+   
+}
+
+img{
+   
+    width: 150px;
+}
+
+/* Styling af mainnav */
+header{
+  display: flex;
+  align-items: center;  
+  position: sticky; /*Gør navigationsbaren følger siden*/
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #FFF9E4;
+}
+
+#main-menu {
+    display: flex;
+    height: 8rem; /*Højden af navigationsbare*/
+    width: 100%;
+    margin: 0px;  
+    z-index: 1;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: top 0.3s;
+    background-color: #FFF9E4;
+  }
+  
+  #main-menu ul {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+  }
+  #main-menu li {
+    list-style-type: none;
+    font-size: 1.5rem;
+
+  }
+ 
+  
+  #main-menu a {
+    color: #2430CB; /*farven på skrift*/
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  
+  #main-menu a:hover {
+    text-decoration: underline; /*Hover i almindelig navbar*/
+  }
+  
+  #hamburger-input{
+    display: none;
+  }
+  
+/* Styling af navbar */
+#hamburger-menu {
+    position: fixed;
+    top: 5%;
+    right: 20px;
+    width: 40px; /*burgermenu ikon størelse*/
+    height: 40px; /*burgermenu ikon størelse*/
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    z-index: 5;
+    background-color: #FFF9E4;
+    font-family: 'Courier New', Courier, monospace, serif;
+    background: linear-gradient(
+    to bottom, 
+    #2430CB, #2430CB 20%, 
+    rgba(255, 255, 255, 0) 20%,rgba(255, 255, 255, 0) 40%, /*gennemsigtig farve*/
+    #2430CB 40%, #2430CB 60%, 
+    rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 80%, 
+    #2430CB 80%, #2430CB 100%
+    );
+}
+
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 40%; /*Hvor meget burgermenuen fylder i udslået version*/
+    height: 100%;
+    background-color: #FFF9E4; /*Burgermenuens baggrundsfarve*/
+    transition: 0.9s; 
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+
+
+#hamburger-menu ul {
+    text-align: center;
+  }
+  
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+
+/* Skrift i hamburgermenu */
+#hamburger-menu a {
+    color: #2430CB; /*Skrift farve i burgermenu*/
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    right: 0;
+}
+  
+/* Gør den resterende skærm har et gennemsigtigt lag over */
+#hamburger-input:checked ~ .overlay{
+    visibility: visible;
+    opacity: 0.4;
+}
+
+.kampagne-content button {
+    width: 40%;
+    margin: 0.5rem 30% 1rem;
+    color: #FFF9E4;
+    background-color: #EF88A4;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.voresoel-content button {
+    width: 40%;
+    margin: 0.5rem 30% 1rem;
+    color: #FFF9E4;
+    background-color: #84B5E1;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.koeb-content button {
+    width: 40%;
+    margin: 0.5rem 30% 1rem;
+    color: #FFF9E4;
+    background-color: #84B5E1;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+/*Styler min footer*/
+footer {
+    
+    height: 100%;
+    width: 100%;
+    background-color: #84B5E1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #FFF9E4;
+    text-align: center;
+
+}
+
+/*Ændre farven på mine medie ikoner*/
+footer a {
+    color: #FFF9E4;
+}
+
+#info, #forhandler, #medier {
+    
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+/*Breakpoint til lille Iphone */
+@media screen and (min-width: 290px) {
+    #main-menu {
+      display: none;
+    }
+    #hamburger-menu {
+      display: inline;
+    }
+    .logo-container {
+        display: inline;
+    }
+    .kampagne-content {
+        margin-top: 18vh;
+        color: #D40B41;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .kampagne-content h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        
+    }
+
+    .kampagne-content p {
+        text-align: justify;
+        margin: 1rem 15%;
+        font-size: 1rem;
+    }
+
+    .kampagneimg-content img {
+        margin: 1rem 10%;
+        width: 80%;
+        
+    }
+
+
+    .voresoel-content {
+        font-family: 'Courier New', Courier, monospace;
+        color: #2430CB;
+        font-size: 1rem;
+    }
+
+    .voresoel-content h2 {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+
+    }
+
+    .voresoel-content p {
+        text-align: justify;
+        margin: 1rem 15%;
+        font-size: 1rem;
+    }
+
+    .voresoelimg-content img {
+        margin: 1rem 10%;
+        width: 80%;
+    }
+
+    .koeb-content {
+        font-family: 'Courier New', Courier, monospace;
+        color: #2430CB;
+        font-size: 1rem;
+
+    }
+
+    .koeb-content h2 {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+
+    }
+
+    .koeb-content p {
+        text-align: justify;
+        margin: 1rem 15% ;
+    }
+
+    .koebimg-content img {
+        margin: 1rem 10% 3rem;
+        width: 80%;
+    }
+
+    
+  }
+
+/*Breakpoint for Iphone der ligger ned  */
+@media screen and (min-width: 843px) {
+    #main-menu {
+        display: none;
+      }
+      #hamburger-menu {
+        display: inline;
+      }
+    
+      .logo-container {
+        display: inline;
+    }
+    section .kampagne-content {
+        margin-top: 43vh;
+    }
+
+   
+    
+      footer {
+        font-size: 2rem;
+      } 
+}
+
+/*Breakpoint for Ipad */
+@media screen and (min-width: 768px) {
+  #main-menu {
+    display: none;
+  }
+  #hamburger-menu {
+    display: inline;
+  }
+
+  .logo-container {
+    display: inline;
+}
+.kampagne-content {
+    margin-top: 15vh;
+}
+
+.kampagneimg-content, .voresoelimg-content, .koebimg-content{
+    width: 70%;
+    margin-left: 15%;
+}
+
+  footer {
+    font-size: 2rem;
+  }
+}
+
+
+
+/*Breakpoint for computer*/
+@media screen and (min-width: 1024px) {
+    #main-menu {
+        display: inline;
+      }
+      #hamburger-menu {
+        display: none;
+      }
+
+      .logo-container {
+        display: none;
+      }
+
+
+      /*Har lejet med grid for at få mine ting flyttet rundt på forsidden, 
+      nu det ikke længere skal være til en lille skærm*/
+    .kampagne-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    section .kampagne-content {
+        margin-top: 18vh;
+    }
+
+    .kampagne-content, .kampagnelimg-content img {
+        margin-top: 2rem;
+        
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+
+    div, .kampagneimg-content img {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 2.5rem;
+    }
+
+
+    .voresoel-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        align-items: center;
+
+    }
+    /*Her har jeg arbejdet med grid-area, fordi jeg skulle bytte rundt på nogle originale placeringer */
+    .voresoel-content {
+        grid-area: 1 / 2;
+    }
+    .voresoelimg-content {
+        grid-area: 1 / 1;
+    }
+
+    .voresoel-content, .voresoelimg-content img {
+        margin-top: 2rem;
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+    .voresoelimg-content img {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .koeb-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .koeb-content, .koebimg-content img {
+        margin-top: 2rem;
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+    .koebimg-content img {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1rem;
+    }
+    footer #medier {
+        font-size: 2rem;
+        padding-top: 2.5rem;
+    }
+}
